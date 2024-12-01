@@ -47,21 +47,39 @@ function Frontscreen() {
     fetchData(); 
   }, []);
 
+  const titleCase = (text: string) =>
+    text
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+
   return (
     <div className=" bg-blue-300 h-full w-screen">
 
-      <h1 className="text-3xl font-bold p-20 text-center">Dog Breeds</h1>
+      <h1 className="
+      text-2xl sm:font-3xl 
+      font-bold 
+      p-20 
+      text-center">Dog Breeds</h1>
 
-      <div className=" ml-20 grid grid-cols-3 gap-4">
+      <div className=" 
+     ml-20
+      grid 
+      grid-cols-1 xsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+      gap-4 
+      pb-10  
+      ">
 
         {dogsData.map((dog) => (
 
-          <div key={dog.id} style={{ marginBottom: "20px" }}>
+          <div key={dog.id} style={{ marginBottom: "20px" }} >
 
+
+           
             
             <Link href={`/frontscreen/${dog.id}`}>
               
-                <h3 className="text-xl font-semibold mb-5">{dog.name.toUpperCase()}</h3>
+                <h3 className="sm:text-xl font-semibold mb-5 text-[15px]">{titleCase(dog.name)}</h3>
                 {dog.imageUrl && (
                   <Image
                     src={dog.imageUrl}
