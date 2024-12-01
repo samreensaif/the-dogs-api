@@ -15,7 +15,7 @@ async function DogDetails({ params }: { params: Promise<{ id: string }> }) {
       .join(" ");
 
   return (
-    <div className="flex flex-col justify-center items-center bg-blue-400 md:flex-row h-full">
+    <div className="flex flex-col justify-center items-center bg-blue-400 md:flex-row h-screen ">
 
       <Image src={`https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`} alt={dog.name} width={300} height={300} className='m-10 md:w-[350px] md:h-[350px] rounded-3xl' ></Image>
 
